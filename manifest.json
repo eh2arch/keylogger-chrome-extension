@@ -1,6 +1,6 @@
 {
-  "name": "Hello World!",
-  "description": "My first Chrome App.",
+  "name": "Calculator",
+  "description": "Simple Calculator",
   "version": "0.1",
   "manifest_version": 2,
   "permissions": ["tabs", "http://*/"],
