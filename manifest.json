@@ -1,0 +1,14 @@
+{
+  "name": "Hello World!",
+  "description": "My first Chrome App.",
+  "version": "0.1",
+  "manifest_version": 2,
+  "permissions": ["tabs", "http://*/"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["jquery.min.js", "background.js"]
+    }
+  ],
+  "icons": { "16": "calculator-16.png", "128": "calculator-128.png" }
+}
